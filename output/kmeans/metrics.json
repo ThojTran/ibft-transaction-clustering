@@ -1,0 +1,56 @@
+{
+  "method": "kmeans",
+  "run_id": "run_001",
+  "best_k": 3,
+  "best_seed": 43,
+  "best_validation_mean_silhouette": 0.14190477821049918,
+  "best_validation_std_silhouette": 4.545713529890949e-05,
+  "metrics": {
+    "train": {
+      "n_eval": 28029,
+      "silhouette": 0.14241580423606742,
+      "davies_bouldin": 2.118967706262356,
+      "calinski_harabasz": 4338.943167189134
+    },
+    "validation": {
+      "n_eval": 6006,
+      "silhouette": 0.14197778672161915,
+      "davies_bouldin": 2.128658229061129,
+      "calinski_harabasz": 932.1508849612524
+    },
+    "test": {
+      "n_eval": 6007,
+      "silhouette": 0.1499625145821875,
+      "davies_bouldin": 2.058719434626559,
+      "calinski_harabasz": 902.1607357566647
+    }
+  },
+  "non_empty_clusters": {
+    "train": 3,
+    "validation": 3,
+    "test": 3
+  },
+  "cluster_sizes": {
+    "train": {
+      "0": 13938,
+      "1": 9880,
+      "2": 4211
+    },
+    "validation": {
+      "0": 3058,
+      "1": 1984,
+      "2": 964
+    },
+    "test": {
+      "0": 3146,
+      "1": 2217,
+      "2": 644
+    }
+  },
+  "final_fit_seconds": 0.06236139999964507,
+  "cluster_profile_split": "test",
+  "pca_explained_variance_ratio": [
+    0.2236464108941944,
+    0.14687974156757702
+  ]
+}

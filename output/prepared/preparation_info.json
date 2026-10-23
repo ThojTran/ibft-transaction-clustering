@@ -1,0 +1,120 @@
+{
+  "row_count": 40042,
+  "raw_row_count": 44910,
+  "filtered_row_count": 44832,
+  "excluded_row_count": 78,
+  "input_file_count": 10,
+  "input_files": [
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_01.xlsx",
+      "row_count": 4300,
+      "sha256": "2ddba68ec4cfbe8cf3eb8354d630bd99c99af3b187146292f7614a2f2d97482f"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_02.xlsx",
+      "row_count": 4787,
+      "sha256": "48c6bfe18d5fa18d38f8fafb48a3b1bfb501df167958754ed8993e6fd6fd987e"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_03.xlsx",
+      "row_count": 4100,
+      "sha256": "c78b63eab3113fc59b5fa0257aa8afd756e85e93dd8b15ab0a2099a9696714fa"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_04.xlsx",
+      "row_count": 4550,
+      "sha256": "a1ac43fc1d72ca0d3eb367e1d5b74b2bf9a3fae63942a038d3afedb1f00095bf"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_05.xlsx",
+      "row_count": 4894,
+      "sha256": "b107a586de31a98b6c698b10257b07d50d9a0aba03cd26acb7e2a062691ea46c"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_06.xlsx",
+      "row_count": 4400,
+      "sha256": "bed0d099cb372751b49dfc240bf80ceeb08abfdaee2b0044eb893349d4c95d82"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_07.xlsx",
+      "row_count": 4700,
+      "sha256": "4a5c416c2f494436693e99e954766b5304e64379d6f7ea4a58b60b7ad84c8303"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_08.xlsx",
+      "row_count": 4176,
+      "sha256": "cfef9527f3596f65ed95a1bcf41e802c6c55f2152f4cd8d82702b298d269348a"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_09.xlsx",
+      "row_count": 4567,
+      "sha256": "36def19fc73a540b59d599d2cb0d52c108edc9bcd675fd11b231cb12e72362d8"
+    },
+    {
+      "file": "IBFT_SYNTHETIC_MAIN_10.xlsx",
+      "row_count": 4436,
+      "sha256": "6304b2684b1063996bdb7a2b058a5685ad46b8cbda069494505ad9964e8b0624"
+    }
+  ],
+  "prepared_at_utc": "2026-10-22T10:14:53.998750+00:00",
+  "split_row_counts": {
+    "train": 28029,
+    "validation": 6006,
+    "test": 6007
+  },
+  "split_ratios_requested": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "split_ratios_actual": {
+    "train": 0.6999900104889866,
+    "validation": 0.14999250786673993,
+    "test": 0.1500174816442735
+  },
+  "split_policy": "chronological; equal timestamps stay in the same split",
+  "history_interval": "[t - 7 days, t); equal timestamps excluded",
+  "preprocessor_fit_split": "train",
+  "weekly_binary_rates_file": "weekly_binary_rates.csv",
+  "library_versions": {
+    "pandas": "3.0.6",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "openpyxl": "3.1.5",
+    "pyarrow": "26.0.0",
+    "joblib": "1.6.0",
+    "matplotlib": "3.11.2"
+  },
+  "history_window_days": 7,
+  "history_start_time": "2026-07-01 00:00:00",
+  "model_start_time": "2026-07-08 00:00:00",
+  "history_row_count": 4790,
+  "train_cutoff": "2026-08-15 16:17:22",
+  "validation_cutoff": "2026-08-24 12:48:57",
+  "raw_features": [
+    "log_amount",
+    "hour_sin",
+    "hour_cos",
+    "weekday_sin",
+    "weekday_cos",
+    "log_sender_recency_days",
+    "log_sender_tx_count_7d",
+    "log_pair_tx_count_7d",
+    "receiver_share_7d",
+    "is_first_sender_tx",
+    "is_new_receiver"
+  ],
+  "processed_features": [
+    "x_log_amount",
+    "x_hour_sin",
+    "x_hour_cos",
+    "x_weekday_sin",
+    "x_weekday_cos",
+    "x_log_sender_recency_days",
+    "x_log_sender_tx_count_7d",
+    "x_log_pair_tx_count_7d",
+    "x_receiver_share_7d",
+    "x_is_first_sender_tx",
+    "x_is_new_receiver"
+  ]
+}

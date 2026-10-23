@@ -1,0 +1,4 @@
+﻿method_a,method_b,split,n_eval,k_a,k_b,ari,nmi
+kmeans,gmm,test,6007,3,3,0.48874950347804447,0.47655778038289437
+kmeans,autoencoder_kmeans,test,6007,3,3,0.34229020366878543,0.3728637617545034
+gmm,autoencoder_kmeans,test,6007,3,3,0.7305616557704917,0.751030391376127

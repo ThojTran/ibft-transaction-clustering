@@ -1,0 +1,61 @@
+{
+  "method": "autoencoder_kmeans",
+  "run_id": "run_001",
+  "best_k": 3,
+  "best_seed": 42,
+  "best_validation_mean_silhouette": 0.10079401490280411,
+  "best_validation_std_silhouette": 0.012543425718156682,
+  "metrics": {
+    "train": {
+      "n_eval": 28029,
+      "silhouette": 0.11174222602301541,
+      "davies_bouldin": 2.5103418768346475,
+      "calinski_harabasz": 3579.2043302589586
+    },
+    "validation": {
+      "n_eval": 6006,
+      "silhouette": 0.11253148117491266,
+      "davies_bouldin": 2.4598676931201404,
+      "calinski_harabasz": 746.6082421174768
+    },
+    "test": {
+      "n_eval": 6007,
+      "silhouette": 0.11086812239096715,
+      "davies_bouldin": 2.5123629879736464,
+      "calinski_harabasz": 765.5781228575727
+    }
+  },
+  "non_empty_clusters": {
+    "train": 3,
+    "validation": 3,
+    "test": 3
+  },
+  "cluster_sizes": {
+    "train": {
+      "0": 6722,
+      "1": 13165,
+      "2": 8142
+    },
+    "validation": {
+      "0": 1124,
+      "1": 2760,
+      "2": 2122
+    },
+    "test": {
+      "0": 1757,
+      "1": 2925,
+      "2": 1325
+    }
+  },
+  "final_fit_seconds": 19.118241699987266,
+  "recon_mse_validation": 0.2027729299280601,
+  "best_epoch": 100,
+  "epochs_run": 100,
+  "training_seconds_actual": 98.9014561999793,
+  "encoding_seconds_actual": 0.016936599990003742,
+  "cluster_profile_split": "test",
+  "pca_explained_variance_ratio": [
+    0.2236464108941944,
+    0.14687974156757702
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "method": "gmm",
+  "run_id": "run_001",
+  "best_k": 3,
+  "best_seed": 42,
+  "best_validation_mean_silhouette": 0.12408108134386468,
+  "best_validation_std_silhouette": 0.03142055993255144,
+  "metrics": {
+    "train": {
+      "n_eval": 28029,
+      "silhouette": 0.14397535346826948,
+      "davies_bouldin": 1.8876930029385182,
+      "calinski_harabasz": 3186.897959404115
+    },
+    "validation": {
+      "n_eval": 6006,
+      "silhouette": 0.13813278292392292,
+      "davies_bouldin": 1.8653585987963288,
+      "calinski_harabasz": 713.9211794643546
+    },
+    "test": {
+      "n_eval": 6007,
+      "silhouette": 0.15038150996967367,
+      "davies_bouldin": 1.7765908202431202,
+      "calinski_harabasz": 722.6176306557787
+    }
+  },
+  "non_empty_clusters": {
+    "train": 3,
+    "validation": 3,
+    "test": 3
+  },
+  "cluster_sizes": {
+    "train": {
+      "0": 366,
+      "1": 14408,
+      "2": 13255
+    },
+    "validation": {
+      "0": 95,
+      "1": 3140,
+      "2": 2771
+    },
+    "test": {
+      "0": 63,
+      "1": 2994,
+      "2": 2950
+    }
+  },
+  "final_fit_seconds": 0.928577899998345,
+  "covariance_type": "full",
+  "converged": true,
+  "confidence_test": {
+    "minimum": 0.9783432722706471,
+    "p10": 0.9999337708379588,
+    "median": 1.0,
+    "p90": 1.0,
+    "maximum": 1.0
+  },
+  "cluster_profile_split": "test",
+  "pca_explained_variance_ratio": [
+    0.2236464108941944,
+    0.14687974156757702
+  ]
+}

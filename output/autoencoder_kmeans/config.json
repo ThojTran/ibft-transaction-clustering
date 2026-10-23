@@ -1,0 +1,129 @@
+{
+  "run_id": "run_001",
+  "k_grid": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "feature_columns": [
+    "x_log_amount",
+    "x_hour_sin",
+    "x_hour_cos",
+    "x_weekday_sin",
+    "x_weekday_cos",
+    "x_log_sender_recency_days",
+    "x_log_sender_tx_count_7d",
+    "x_log_pair_tx_count_7d",
+    "x_receiver_share_7d",
+    "x_is_first_sender_tx",
+    "x_is_new_receiver"
+  ],
+  "input_file": "output/prepared/model_input.parquet",
+  "split_row_counts": {
+    "train": 28029,
+    "validation": 6006,
+    "test": 6007
+  },
+  "metric_protocol": {
+    "space": "prepared_x_features",
+    "silhouette_train_sample_size": 10000,
+    "silhouette_sample_seed": 42,
+    "silhouette_validation_and_test": "all_rows",
+    "davies_bouldin_and_calinski_harabasz": "all_rows_per_split"
+  },
+  "selection_rule": "K = highest mean validation silhouette over seeds; seed = best validation silhouette within K; test not used",
+  "method": "autoencoder_kmeans",
+  "hyperparameters": {
+    "autoencoder": {
+      "architecture": [
+        11,
+        16,
+        8,
+        4,
+        8,
+        16,
+        11
+      ],
+      "lr": 0.001,
+      "batch_size": 256,
+      "max_epochs": 100,
+      "patience": 10,
+      "inference_batch_size": 4096
+    },
+    "kmeans": {
+      "init": "k-means++",
+      "n_init": 10,
+      "max_iter": 300,
+      "tol": 0.0001,
+      "algorithm": "lloyd"
+    }
+  },
+  "ae_training_by_seed": [
+    {
+      "seed": 42,
+      "epochs_run": 100,
+      "best_epoch": 100,
+      "stopped_early": false,
+      "stop_reason": "max_epochs",
+      "best_validation_mse": 0.2027729299280601,
+      "fit_seconds": 18.988142899994273,
+      "encode_seconds": 0.003851499997836072
+    },
+    {
+      "seed": 43,
+      "epochs_run": 100,
+      "best_epoch": 96,
+      "stopped_early": false,
+      "stop_reason": "max_epochs",
+      "best_validation_mse": 0.20843813253531013,
+      "fit_seconds": 18.868597500004398,
+      "encode_seconds": 0.003173899996909313
+    },
+    {
+      "seed": 44,
+      "epochs_run": 100,
+      "best_epoch": 95,
+      "stopped_early": false,
+      "stop_reason": "max_epochs",
+      "best_validation_mse": 0.15164593052662645,
+      "fit_seconds": 18.815054300001066,
+      "encode_seconds": 0.002953800001705531
+    },
+    {
+      "seed": 45,
+      "epochs_run": 100,
+      "best_epoch": 99,
+      "stopped_early": false,
+      "stop_reason": "max_epochs",
+      "best_validation_mse": 0.16642972799676772,
+      "fit_seconds": 18.63769350000075,
+      "encode_seconds": 0.0032995000001392327
+    },
+    {
+      "seed": 46,
+      "epochs_run": 100,
+      "best_epoch": 96,
+      "stopped_early": false,
+      "stop_reason": "max_epochs",
+      "best_validation_mse": 0.2060332232504886,
+      "fit_seconds": 18.80475299999671,
+      "encode_seconds": 0.0036578999934135936
+    }
+  ],
+  "fit_seconds_definition": "AE training + encoding + KMeans fit; AE time reused across K, times repeated across splits",
+  "recon_mse_definition": "Validation MSE per element at restored best AE checkpoint; only on validation rows",
+  "final_model_policy": "reuse selected AE checkpoint and fitted KMeans from sweep; no refit",
+  "completed_at_utc": "2026-10-22T17:19:49.708118+00:00"
+}

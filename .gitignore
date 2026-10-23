@@ -1,7 +1,5 @@
-# Private transaction data and generated results
+# Private source data and binary artifacts
 /data/
-/output/
-/outputs/
 *.xlsx
 *.xls
 *.xlsm
@@ -15,6 +13,13 @@
 *.pt
 *.pth
 *.ckpt
+
+# Share CSV results alongside the images and JSON files in output/
+!/output/**/*.csv
+
+# Keep transaction-level labels private, including CSV exports
+labels.*
+*_labels.*
 
 # Python environments and caches
 .venv/

@@ -1,0 +1,387 @@
+{
+  "run_id": "run_001",
+  "k_grid": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "feature_columns": [
+    "x_log_amount",
+    "x_hour_sin",
+    "x_hour_cos",
+    "x_weekday_sin",
+    "x_weekday_cos",
+    "x_log_sender_recency_days",
+    "x_log_sender_tx_count_7d",
+    "x_log_pair_tx_count_7d",
+    "x_receiver_share_7d",
+    "x_is_first_sender_tx",
+    "x_is_new_receiver"
+  ],
+  "input_file": "output/prepared/model_input.parquet",
+  "split_row_counts": {
+    "train": 28029,
+    "validation": 6006,
+    "test": 6007
+  },
+  "metric_protocol": {
+    "space": "prepared_x_features",
+    "silhouette_train_sample_size": 10000,
+    "silhouette_sample_seed": 42,
+    "silhouette_validation_and_test": "all_rows",
+    "davies_bouldin_and_calinski_harabasz": "all_rows_per_split"
+  },
+  "selection_rule": "K = highest mean validation silhouette over seeds; seed = best validation silhouette within K; test not used",
+  "method": "gmm",
+  "hyperparameters": {
+    "covariance_type": "full",
+    "n_init": 3,
+    "max_iter": 300,
+    "tol": 0.001,
+    "reg_covar": 1e-06,
+    "init_params": "kmeans"
+  },
+  "fit_diagnostics": [
+    {
+      "k": 3,
+      "seed": 42,
+      "covariance_type": "full",
+      "n_iter": 10,
+      "fallback_reason": null,
+      "fit_seconds": 1.1758123999970849
+    },
+    {
+      "k": 3,
+      "seed": 43,
+      "covariance_type": "full",
+      "n_iter": 10,
+      "fallback_reason": null,
+      "fit_seconds": 0.8821292999928119
+    },
+    {
+      "k": 3,
+      "seed": 44,
+      "covariance_type": "full",
+      "n_iter": 10,
+      "fallback_reason": null,
+      "fit_seconds": 0.7600781000001007
+    },
+    {
+      "k": 3,
+      "seed": 45,
+      "covariance_type": "full",
+      "n_iter": 10,
+      "fallback_reason": null,
+      "fit_seconds": 0.7476753999944776
+    },
+    {
+      "k": 3,
+      "seed": 46,
+      "covariance_type": "full",
+      "n_iter": 10,
+      "fallback_reason": null,
+      "fit_seconds": 0.7919543000025442
+    },
+    {
+      "k": 4,
+      "seed": 42,
+      "covariance_type": "full",
+      "n_iter": 52,
+      "fallback_reason": null,
+      "fit_seconds": 4.59630570000445
+    },
+    {
+      "k": 4,
+      "seed": 43,
+      "covariance_type": "full",
+      "n_iter": 52,
+      "fallback_reason": null,
+      "fit_seconds": 5.129380800004583
+    },
+    {
+      "k": 4,
+      "seed": 44,
+      "covariance_type": "full",
+      "n_iter": 28,
+      "fallback_reason": null,
+      "fit_seconds": 2.4326242999959504
+    },
+    {
+      "k": 4,
+      "seed": 45,
+      "covariance_type": "full",
+      "n_iter": 51,
+      "fallback_reason": null,
+      "fit_seconds": 5.636744499999622
+    },
+    {
+      "k": 4,
+      "seed": 46,
+      "covariance_type": "full",
+      "n_iter": 16,
+      "fallback_reason": null,
+      "fit_seconds": 1.4947657000011532
+    },
+    {
+      "k": 5,
+      "seed": 42,
+      "covariance_type": "full",
+      "n_iter": 58,
+      "fallback_reason": null,
+      "fit_seconds": 5.507404500000121
+    },
+    {
+      "k": 5,
+      "seed": 43,
+      "covariance_type": "full",
+      "n_iter": 20,
+      "fallback_reason": null,
+      "fit_seconds": 2.5756977000055485
+    },
+    {
+      "k": 5,
+      "seed": 44,
+      "covariance_type": "full",
+      "n_iter": 18,
+      "fallback_reason": null,
+      "fit_seconds": 4.101968200004194
+    },
+    {
+      "k": 5,
+      "seed": 45,
+      "covariance_type": "full",
+      "n_iter": 20,
+      "fallback_reason": null,
+      "fit_seconds": 2.721243999993021
+    },
+    {
+      "k": 5,
+      "seed": 46,
+      "covariance_type": "full",
+      "n_iter": 20,
+      "fallback_reason": null,
+      "fit_seconds": 4.058099200003198
+    },
+    {
+      "k": 6,
+      "seed": 42,
+      "covariance_type": "full",
+      "n_iter": 31,
+      "fallback_reason": null,
+      "fit_seconds": 4.0043534000069485
+    },
+    {
+      "k": 6,
+      "seed": 43,
+      "covariance_type": "full",
+      "n_iter": 34,
+      "fallback_reason": null,
+      "fit_seconds": 4.17642909999995
+    },
+    {
+      "k": 6,
+      "seed": 44,
+      "covariance_type": "full",
+      "n_iter": 31,
+      "fallback_reason": null,
+      "fit_seconds": 4.790593899997475
+    },
+    {
+      "k": 6,
+      "seed": 45,
+      "covariance_type": "full",
+      "n_iter": 30,
+      "fallback_reason": null,
+      "fit_seconds": 5.176448499994876
+    },
+    {
+      "k": 6,
+      "seed": 46,
+      "covariance_type": "full",
+      "n_iter": 34,
+      "fallback_reason": null,
+      "fit_seconds": 5.0652906999966945
+    },
+    {
+      "k": 7,
+      "seed": 42,
+      "covariance_type": "full",
+      "n_iter": 47,
+      "fallback_reason": null,
+      "fit_seconds": 7.019963999999163
+    },
+    {
+      "k": 7,
+      "seed": 43,
+      "covariance_type": "full",
+      "n_iter": 44,
+      "fallback_reason": null,
+      "fit_seconds": 8.155751300000702
+    },
+    {
+      "k": 7,
+      "seed": 44,
+      "covariance_type": "full",
+      "n_iter": 34,
+      "fallback_reason": null,
+      "fit_seconds": 6.681557800002338
+    },
+    {
+      "k": 7,
+      "seed": 45,
+      "covariance_type": "full",
+      "n_iter": 49,
+      "fallback_reason": null,
+      "fit_seconds": 6.8963035000051605
+    },
+    {
+      "k": 7,
+      "seed": 46,
+      "covariance_type": "full",
+      "n_iter": 49,
+      "fallback_reason": null,
+      "fit_seconds": 7.003405700001167
+    },
+    {
+      "k": 8,
+      "seed": 42,
+      "covariance_type": "full",
+      "n_iter": 19,
+      "fallback_reason": null,
+      "fit_seconds": 5.582441200000176
+    },
+    {
+      "k": 8,
+      "seed": 43,
+      "covariance_type": "full",
+      "n_iter": 27,
+      "fallback_reason": null,
+      "fit_seconds": 6.302898399997503
+    },
+    {
+      "k": 8,
+      "seed": 44,
+      "covariance_type": "full",
+      "n_iter": 32,
+      "fallback_reason": null,
+      "fit_seconds": 7.421447599997919
+    },
+    {
+      "k": 8,
+      "seed": 45,
+      "covariance_type": "full",
+      "n_iter": 55,
+      "fallback_reason": null,
+      "fit_seconds": 8.56298660000175
+    },
+    {
+      "k": 8,
+      "seed": 46,
+      "covariance_type": "full",
+      "n_iter": 36,
+      "fallback_reason": null,
+      "fit_seconds": 7.11895270000241
+    },
+    {
+      "k": 9,
+      "seed": 42,
+      "covariance_type": "full",
+      "n_iter": 37,
+      "fallback_reason": null,
+      "fit_seconds": 8.287695600003644
+    },
+    {
+      "k": 9,
+      "seed": 43,
+      "covariance_type": "full",
+      "n_iter": 34,
+      "fallback_reason": null,
+      "fit_seconds": 6.557482700001856
+    },
+    {
+      "k": 9,
+      "seed": 44,
+      "covariance_type": "full",
+      "n_iter": 32,
+      "fallback_reason": null,
+      "fit_seconds": 7.975390999999945
+    },
+    {
+      "k": 9,
+      "seed": 45,
+      "covariance_type": "full",
+      "n_iter": 37,
+      "fallback_reason": null,
+      "fit_seconds": 7.607493200004683
+    },
+    {
+      "k": 9,
+      "seed": 46,
+      "covariance_type": "full",
+      "n_iter": 38,
+      "fallback_reason": null,
+      "fit_seconds": 7.537198600002739
+    },
+    {
+      "k": 10,
+      "seed": 42,
+      "covariance_type": "full",
+      "n_iter": 45,
+      "fallback_reason": null,
+      "fit_seconds": 8.505223000000115
+    },
+    {
+      "k": 10,
+      "seed": 43,
+      "covariance_type": "full",
+      "n_iter": 43,
+      "fallback_reason": null,
+      "fit_seconds": 9.047036700001627
+    },
+    {
+      "k": 10,
+      "seed": 44,
+      "covariance_type": "full",
+      "n_iter": 36,
+      "fallback_reason": null,
+      "fit_seconds": 8.542387399997097
+    },
+    {
+      "k": 10,
+      "seed": 45,
+      "covariance_type": "full",
+      "n_iter": 33,
+      "fallback_reason": null,
+      "fit_seconds": 8.82547219999833
+    },
+    {
+      "k": 10,
+      "seed": 46,
+      "covariance_type": "full",
+      "n_iter": 22,
+      "fallback_reason": null,
+      "fit_seconds": 6.927525099999912
+    }
+  ],
+  "final_fit_diagnostics": {
+    "k": 3,
+    "seed": 42,
+    "covariance_type": "full",
+    "n_iter": 10,
+    "fallback_reason": null,
+    "fit_seconds": 0.928577899998345
+  },
+  "completed_at_utc": "2026-10-22T15:53:26.302599+00:00"
+}

@@ -1,0 +1,56 @@
+{
+  "run_id": "run_001",
+  "k_grid": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "feature_columns": [
+    "x_log_amount",
+    "x_hour_sin",
+    "x_hour_cos",
+    "x_weekday_sin",
+    "x_weekday_cos",
+    "x_log_sender_recency_days",
+    "x_log_sender_tx_count_7d",
+    "x_log_pair_tx_count_7d",
+    "x_receiver_share_7d",
+    "x_is_first_sender_tx",
+    "x_is_new_receiver"
+  ],
+  "input_file": "output/prepared/model_input.parquet",
+  "split_row_counts": {
+    "train": 28029,
+    "validation": 6006,
+    "test": 6007
+  },
+  "metric_protocol": {
+    "space": "prepared_x_features",
+    "silhouette_train_sample_size": 10000,
+    "silhouette_sample_seed": 42,
+    "silhouette_validation_and_test": "all_rows",
+    "davies_bouldin_and_calinski_harabasz": "all_rows_per_split"
+  },
+  "selection_rule": "K = highest mean validation silhouette over seeds; seed = best validation silhouette within K; test not used",
+  "method": "kmeans",
+  "hyperparameters": {
+    "init": "k-means++",
+    "n_init": 10,
+    "max_iter": 300,
+    "tol": 0.0001,
+    "algorithm": "lloyd"
+  },
+  "completed_at_utc": "2026-10-22T17:16:41.377787+00:00"
+}

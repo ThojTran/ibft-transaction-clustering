@@ -1,0 +1,4 @@
+﻿cluster,transaction_count,transaction_share,median_amount_vnd,modal_hour,is_new_receiver_rate,is_first_sender_tx_rate,median_sender_tx_count_7d,amount_missing_count
+0,1757,0.2924920925586815,859000.0,13,0.5993170176437109,0.0,13.0,0
+1,2925,0.48693191276843684,899000.0,16,0.0,0.0,29.0,2
+2,1325,0.22057599467288164,862000.0,14,0.6520754716981132,0.0,16.0,0
