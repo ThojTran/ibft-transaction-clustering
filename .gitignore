@@ -1,0 +1,54 @@
+# Private transaction data and generated results
+/data/
+/output/
+/outputs/
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.ckpt
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials*.json
+secrets*.json
+.aws/
+.ssh/
+
+# Local editor, tool and operating system files
+.vscode/
+.idea/
+.codex/
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Notebook outputs are embedded inside .ipynb files.
+# Use Clear All Outputs before committing notebooks after running them.
