@@ -11,6 +11,10 @@ nbformat==5.11.1
 nbclient==0.11.0
 nbconvert==7.17.2
 
+# Local application: python -m streamlit run app.py
+streamlit==1.66.1
+altair==6.3.0
+
 # CPU build used by models/autoencoder_kmeans.ipynb.
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.14.1+cpu
